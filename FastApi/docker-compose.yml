@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  client:
+    build:
+      context: ../../../frontend/intern/denilson/VueJS/dashboard
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    networks:
+      - default
+  
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+    networks:
+      - default
+  
